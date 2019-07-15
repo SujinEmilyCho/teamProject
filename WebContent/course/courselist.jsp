@@ -10,16 +10,93 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="css.frame.css"/>
 <style type="text/css">
-	table{
-		border-collapse: collapse;
-	}
-	table>thead>tr>th{
-		border:1px solid;
-	}
-	table>tbody>tr>td{
-		border:1px solid;
-	}
-	
+h1{
+            width:800px;
+            height:50px;
+            text-align: center;
+            color:rgb(3,73,120);
+            font-weight: bolder;
+            margin: auto;
+            font-size:40px;
+            padding-bottom: 30px;
+        }
+         hr{
+            border:1px solid lightgray;
+            width:800px;
+            margin-bottom:50px;
+        }
+   #courselist{
+   			width:1600px;
+   			margin:auto;
+            border-collapse: collapse;
+            text-align: center;
+            margin-bottom:50px;
+        }
+         th, td {
+            border-bottom: 1px solid white;
+            padding: 10px;
+        }
+        tbody tr:nth-child(2n) {
+            background-color: white;
+        }
+        tbody tr:nth-child(2n+1) {
+            background-color: beige;
+        }
+        #headtr {
+            background-color: rgb(3,73,120);
+            font-size:25px;
+            color:white;
+        }
+        #searchcourse{
+        	margin-left:560px;
+        	display:inline-flex;
+        	width:900px;
+        	height:200px;
+        	text-align:center;
+        }
+        #searchcourse>form>label{
+        	font-size:20px;
+            font-weight: bold;
+            color:rgb(3,73,120);
+        }
+        #searchcourse>form>#jo{
+        	font-size:20px;
+        	color:white;
+            border:1px solid white;
+            font-weight: bold;
+            width:80px;
+            height:40x;
+            background-color:rgb(3,73,120);
+        }
+        #searchcourse>form>#sear{
+        	font-size:20px;
+        	color:white;
+            border:1px solid white;
+            font-weight: bold;
+            width:80px;
+            height:40x;
+            background-color:rgb(3,73,120);
+        }
+        #searchcourse>form>#sear_text{
+        	font-size:20px;
+            font-weight: bold;
+            width:230px;
+            height:40x;
+        }
+        #searchcourse>form>select{
+        	font-size:20px;
+        }
+        #searchcourse>a{
+        	font-size:20px;
+        	color:white;
+            border:1px solid white;
+            font-weight: bold;
+            width:80px;
+            height:30px;
+            line-height:30px;
+            background-color:darkred;
+            text-decoration:none;
+        }
 </style>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 <script type="text/javascript">

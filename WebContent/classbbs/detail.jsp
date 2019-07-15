@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <%
 	String context=request.getContextPath();
 	ClassBbs_Dto bean = (ClassBbs_Dto)request.getAttribute("bean");

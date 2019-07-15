@@ -4,6 +4,43 @@
 <html>
 <head>
 <meta charset="utf-8">
+<style type="text/css">
+     h1{
+            width:800px;
+            height:50px;
+            text-align: center;
+            color:rgb(3,73,120);
+            font-weight: bolder;
+            margin: auto;
+            font-size:40px;
+            padding-bottom: 30px;
+            border-bottom:1px solid lightgray;
+            
+        }
+        hr{
+            border:1px solid lightgray;
+            width:800px;
+        }
+        #btn{
+            display:inline-flex;
+            width:500px;
+            height: 50px;
+            margin-left: 780px;
+            margin-bottom: 10px;
+        }
+        input{
+            border:1px solid white;
+            height:50px;
+            width:200px;
+            background-color:rgb(3,73,120);
+            list-style: none;
+            text-align: center;
+            line-height: 50px;
+            font-size:25px;
+            color:white;
+            font-weight: bold;
+        }
+</style>
 <title>Insert title here</title>
 </head>
 <body>

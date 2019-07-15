@@ -5,15 +5,6 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
-<style type="text/css">
-	div{
-	width:100px;
-	height:100px;
-	}
-	div>a{
-	text-decoration:none;
-	}
-</style>
 </head>
 <body>
 <jsp:include page="/UI/headerUI.jsp"/>

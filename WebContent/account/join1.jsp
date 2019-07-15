@@ -4,6 +4,53 @@
 <html>
 <head>
 <meta charset="utf-8">
+<style type="text/css">
+#agree{
+            margin-top:10px;
+            width:500px;
+            height: 400px;
+            margin:auto;
+            font-size:20px;
+            font-weight: bold;
+        }
+        h1{
+            width:300px;
+            height:50px;
+            text-align: center;
+            color:rgb(3,73,120);
+            font-weight: bolder;
+            margin: auto;
+            font-size:40px;
+        }
+        hr{
+            border:1px solid lightgray;
+        }
+        #agreelist2{
+            border:1px solid lightgray;
+            width:900px;
+            font-size:15px;
+            
+        }
+        #agreechk{
+            color:rgb(3,73,120);
+        }
+        #req{
+            width:20px;
+            height:15px;
+        }
+        #next{
+            border:1px solid white;
+            height:50px;
+            width:200px;
+            background-color:rgb(3,73,120);
+            list-style: none;
+            text-align: center;
+            line-height: 50px;
+            font-size:25px;
+            color:white;
+            font-weight: bold;
+        }
+</style>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 <script type="text/javascript">
 function chk(){
@@ -67,5 +114,4 @@ function chk(){
 </form>
 <jsp:include page="/UI/footerUI.jsp"/>	
 </body>
-</html>
 </html>

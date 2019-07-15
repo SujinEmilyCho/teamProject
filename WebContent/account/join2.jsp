@@ -4,6 +4,72 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style type="text/css">
+	 h1{
+            width:800px;
+            height:50px;
+            text-align: center;
+            color:rgb(3,73,120);
+            font-weight: bolder;
+            margin: auto;
+            font-size:40px;
+            padding-bottom: 30px;
+            border-bottom:1px solid lightgray;
+            
+        }
+        hr{
+            border:1px solid lightgray;
+            width:800px;
+        }
+        #joinlist{
+            width:500px;
+            height: 500px;
+            margin:auto;
+            font-size:20px;
+            font-weight: bold;
+            margin-right:550px;
+        }
+        #joinlist>label{
+            font-size:25px;
+            font-weight: bold;
+            color:rgb(3,73,120);
+        }
+        input{
+            margin-bottom: 8px;
+        }
+        #font{
+            font-size:25px;
+            font-weight: bold;
+        }
+        #btn{
+            display:inline-flex;
+            width:500px;
+            height: 100px;
+            margin-left: 780px;
+            margin-bottom: 10px;
+        }
+        button{
+            color:white;
+            border:1px solid white;
+            font-weight: bold;
+            width:200px;
+            height:50px;
+            background-color:rgb(3,73,120);
+            font-size:25px;
+        }
+        #backindex{
+            border:1px solid white;
+            height:50px;
+            width:200px;
+            background-color:rgb(3,73,120);
+            list-style: none;
+            text-align: center;
+            line-height: 50px;
+            font-size:25px;
+            color:white;
+            font-weight: bold;
+        }
+</style>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){

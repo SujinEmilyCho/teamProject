@@ -1,9 +1,72 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
+<style type="text/css">
+	h1{
+            width:300px;
+            height:50px;
+            text-align: center;
+            color:rgb(3,73,120);
+            font-weight: bolder;
+            margin: auto;
+            font-size:40px;
+        }
+        #login{
+            margin:auto;
+            margin-top:40px;
+            margin-bottom: 30px;
+            width:40px;
+            height:100px;
+            padding:70px 70px 70px 70px;
+            border-top:3px solid lightgray;
+            border-bottom:3px solid lightgray;
+        }
+        td{
+            font-size:35px;
+            width:70px;
+            color:rgb(3,73,120);
+            font-weight:bold;
+        }
+        #input{
+            width:80px;
+            height:60px;
+            font-size:35px;
+        }
+        button{
+            color:white;
+            border:1px solid rgb(3,73,120);
+            font-weight: bold;
+            width:100px;
+            height:50px;
+            background-color:rgb(3,73,120);
+            font-size:25px;
+        }
+        #btn{
+            display:inline-flex;
+            width:500px;
+            height: 100px;
+            margin-left: 675px;
+            margin-bottom: 150px;
+        }
+        #btn>li{
+            border:1px solid white;
+            height:50px;
+            width:200px;
+            background-color:rgb(3,73,120);
+            list-style: none;
+            text-align: center;
+            line-height: 50px;
+            font-size:25px;
+        }
+        #btn>li>a{
+            color:white;
+            text-decoration: none;
+            font-weight: bold;            
+        }
+</style>
 <title>LOGIN</title>
 <style type="text/css">
 	div{
@@ -12,30 +75,29 @@
 </style>
 </head>
 <body>
+<%String errmsg = (String)request.getAttribute("errmsg");
+if(errmsg!=null){out.print(errmsg);}%>
 <jsp:include page="/UI/headerUI.jsp"/>
 	<form action="" method="post">
-	<h1>·Î±×ÀÎ</h1>
+	<h1>ë¡œê·¸ì¸</h1>
 	<div>
-		<table>
-			<tr>
+		<table id="login">
+			<tr id="ID">
 				<td>ID</td>
-				<td><input type="text" name="ID"></td>
+				<td id="input"><input type="text" name="ID"></td>
 			</tr>
-			<tr>
+			<tr id="PW">
 				<td>PW</td>
-				<td><input type="password" name="PW"></td>
+				<td id="input"><input type="password" name="PW"></td>
 			</tr>
 		</table>
 	</div>
-	<button type="submit" value="login">·Î±×ÀÎ</button>
-	<a href="join">È¸¿ø°¡ÀÔ</a>
-	<a href="findid">¾ÆÀÌµðÃ£±â</a>
-	<a href="">ºñ¹Ð¹øÈ£Ã£±â</a>
+	<ul id="btn">
+        <li><button type="submit" value="login">ë¡œê·¸ì¸</button></li>
+        <li><a href="<%=request.getContextPath() %>/join"" id="join">íšŒì›ê°€ìž…</a></li>
+        <li><a href="<%=request.getContextPath() %>/findid" id="findid">ì•„ì´ë””ì°¾ê¸°</a></li>
+	</ul>
 	</form>
-	<%
-   Object obj =request.getAttribute("errnsg");
-   if(obj!=null)out.print(obj);
-   %>
 <jsp:include page="/UI/footerUI.jsp"/>	
 </body>
 </html>

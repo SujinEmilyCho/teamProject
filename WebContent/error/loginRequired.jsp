@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <jsp:include page="/UI/headerUI.jsp"/>
-<h1>╥н╠вюнго╪е╬ъ юл©Кгр ╪Ж юж╬Н©╘</h1>
+<h1>К║°Й╥╦Л²╦М∙≤Л┘■Л∙╪ Л²╢Л ╘М∙═ Л┬≤ Л·┬Л√╢Л≈╛</h1>
 <jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>
