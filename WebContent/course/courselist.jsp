@@ -108,12 +108,14 @@ h1{
 <body>
 <jsp:include page="/UI/headerUI.jsp"/>
 	<% String root= request.getContextPath(); %>
+	 <h1>과정 관리</h1>
+	 <hr>
 	<form action="course">
 
-		<table>
-			<thead>
+		<table id="courselist">
+			<thead id="headtr">
 				<tr>
-					<th>No.</th>
+					<th>과정코드</th>
 					<th>과정</th>
 					<th>강사</th>
 					<th>최대수용인원</th>
@@ -153,7 +155,8 @@ h1{
 						
 			</tbody>
 		</table>
-
+<hr>
+<div id="searchcourse">
 		</form>
 		<form action="course" method="post">
 						<label>년도</label>
@@ -202,9 +205,8 @@ h1{
 						<input type="text" name ="search" value="null">
 						<input type="submit" for="search" value="검색">
 				</form>		
-				
-	
-	<a href="<%=root %>/course/courseinsert"><button>추가</button></a>
+				<a href="<%=root %>/course/courseinsert">추가</a>
+				</div>
 <jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

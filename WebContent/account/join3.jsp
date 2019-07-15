@@ -14,8 +14,6 @@
             margin: auto;
             font-size:40px;
             padding-bottom: 30px;
-            border-bottom:1px solid lightgray;
-            
         }
         hr{
             border:1px solid lightgray;
@@ -25,7 +23,7 @@
             display:inline-flex;
             width:500px;
             height: 50px;
-            margin-left: 780px;
+            margin-left: 590px;
             margin-bottom: 10px;
         }
         input{
@@ -40,14 +38,32 @@
             color:white;
             font-weight: bold;
         }
+    #hello{
+        width:800px;
+        height:100px;
+        margin:auto;
+        font-size:30px;
+        text-align: center;
+        line-height: 100px;
+        font-weight: bold;
+        color:rgb(3,73,120);
+    }
 </style>
 <title>Insert title here</title>
 </head>
 <body>
 <jsp:include page="/UI/headerUI.jsp"/>
-	<h1>회원가입을 축하드립니다!</h1>
+	<h1>회원가입 성공!</h1>
+	<hr>
+	<div id="hello">
+	    안녕하세요!
+	    비트캠프에 오신 것을 환영합니다.
+	</div>
+	<hr>
+	<div id="btn">
 	<input value="로그인으로 돌아가기" type="button" name="backlogin" id="backlogin" onclick="location='<%=request.getContextPath()%>/login'">
 	<input value="메인으로 돌아가기" type="button" name="backindex" id="backindex" onclick="location='<%=request.getContextPath()%>'">
+	</div>
 <jsp:include page="/UI/footerUI.jsp"/>	
 </body>
 </html>

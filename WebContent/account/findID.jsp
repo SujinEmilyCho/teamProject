@@ -28,21 +28,25 @@ h1{
             margin:auto;
             font-size:20px;
             font-weight: bold;
-            margin-left:750px;
         }
-        #findlist>label{
+        #findlist>form{
+            margin: auto;
+            width:300px;
+        }
+        #findlist>form>label{
             font-size:25px;
             font-weight: bold;
             color:rgb(3,73,120);
         }
         input{
             margin-bottom: 8px;
+            width:250px;
         }
         #btn{
             display:inline-flex;
             width:500px;
             height: 50px;
-            margin-left: 780px;
+            margin-left: 720px;
             margin-bottom: 10px;
         }
         button{
@@ -72,8 +76,11 @@ h1{
 </script>
 </head>
 <body>
+<%String errmsg = (String)request.getAttribute("errmsg");
+if(errmsg!=null){out.print(errmsg);}%>
 <jsp:include page="/UI/headerUI.jsp"/>
 	<h1>아이디찾기</h1>
+	<ul id="findlist">
 	<form action="" method="post">
 	<label for="name">성함</label><br>
 	 <input type="text" name="name" id="name" ><br>
@@ -83,15 +90,12 @@ h1{
 	 <input type="text" name="bday" id="bday"><br>
 	 <label for="phone">전화번호</label><br>
 	 <input type="text" name="phone" id="phone"><br>
-	 
-	 <button type="submit">찾기</button>
-	 <input type="button" onclick="location='login'" value="취소">
-	 
 	 </form>
-	 <%
-   Object obj =request.getAttribute("errnsg");
-   if(obj!=null)out.print(obj);
-   %>
+	 </ul><hr>
+	 <div id="btn">
+	 <button type="submit">찾기</button>
+	 <input type="button" onclick="location='login'" id="cancel" value="취소">
+	 </div>
    <jsp:include page="/UI/footerUI.jsp"/>	
 </body>
 </html>

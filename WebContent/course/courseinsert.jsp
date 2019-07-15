@@ -106,8 +106,9 @@
 	String root = request.getContextPath();
 %>
 <form action="" method="post">
-<h2>입력 페이지</h2>
-			
+<h1>과정 관리</h1>
+			<hr>
+			<div id="coursebox">
 				<div>
 					<label for="coursecode">강좌코드</label>
 					<input type="text" name="coursecode" id="coursecode" />
@@ -136,10 +137,12 @@
 					<label for="status">상태</label>
 					<input type="text" name="status" id="status" />
 				</div>
-				<div>
+				<hr>
+				<div id="btn">
 					<button type="submit">입력</button>
 					<button type="reset">취소</button>
-					<button type="button">뒤로</button>
+					<button type="button" onclick="location='<%=root%>/course'">뒤로</button>
+				</div>
 				</div>
 			</form>		
 <jsp:include page="/UI/footerUI.jsp"/>

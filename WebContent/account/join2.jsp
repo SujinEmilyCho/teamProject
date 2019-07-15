@@ -95,7 +95,7 @@
 	 <div id="main">
 	 <h1>회원가입</h1>
 	 <br><br>
-	 
+	 <ul id="joinlist">
 	 <label for="name">성함</label><br>
 	 <input type="text" name="name" id="name" ><br>
 	 <label for="id">아이디</label><br>
@@ -112,10 +112,12 @@
 	 <input type="text" name="bday" id="bday"><br>
 	 <label for="phone">전화번호</label><br>
 	 <input type="text" name="phone" id="phone">	 
+	 </ul><hr><br>
 	 </div>
-	
+	<div id="btn">
 	 <button type="submit" id="join" name="join">가입하기</button>
 	 <input value="돌아가기" type="button" name="backindex" id="backindex" onclick="location='<%=request.getContextPath() %>'">
+	 </div>
 	 </form>
 <jsp:include page="/UI/footerUI.jsp"/>	
 </body>

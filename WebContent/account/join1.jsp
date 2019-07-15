@@ -72,15 +72,13 @@ function chk(){
 <body>
 <jsp:include page="/UI/headerUI.jsp"/>
 <form action="" name="form">
- <table>
+ <h1>회원가입</h1>
+ <table id="agree">
   <tr>
-   <td>회원가입</td>
-  </tr>
-  <tr>
-   <td>
+   <td id="agreelist">
    <hr><br>
    <textarea
-     rows="20" cols="150">가. 수집하는 개인정보의 항목첫째, 회사는 회원가 입, 원활한 고객상담, 각종 서비스의 제공을 위해 최초 회원가입 당시 아래와 같은 최소한의 개인정보를 필수항목으로 수집하고 있습니다.
+     rows="20" cols="150" id="agreelist2">가. 수집하는 개인정보의 항목첫째, 회사는 회원가 입, 원활한 고객상담, 각종 서비스의 제공을 위해 최초 회원가입 당시 아래와 같은 최소한의 개인정보를 필수항목으로 수집하고 있습니다.
 회원가입
 - 이름, 생년월일, 성별, 아이디, 비밀번호, 별명, 연락처(메일주소, 휴대폰 번호 중 선택), 가입인증정보
 만14세 미만 아동 회원가입 
@@ -104,10 +102,11 @@ function chk(){
 - 생성정보 수집 툴을 통한 수집
    </textarea>
    <br><br>
-   <input type="checkbox" name="req" id="req"> 개인정보 수집 및 이용에 동의합니다. 
+   <input type="checkbox" name="req" id="req" id="agreechk"> 개인정보 수집 및 이용에 동의합니다. 
+  
    <br>
    <hr>
-    <input type="button" onclick="chk()" value="다음"> 
+    <input type="button" onclick="chk()" value="다음" id="next"> 
    </td>
   </tr>
  </table>
