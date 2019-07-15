@@ -23,6 +23,7 @@ function chk(){
 <title>회원가입</title>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 <form action="" name="form">
  <table>
   <tr>
@@ -64,6 +65,7 @@ function chk(){
   </tr>
  </table>
 </form>
+<jsp:include page="/UI/footerUI.jsp"/>	
 </body>
 </html>
 </html>

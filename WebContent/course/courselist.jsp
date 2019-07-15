@@ -29,12 +29,14 @@
 </script>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 	<% String root= request.getContextPath(); %>
 	<form action="course">
 
 		<table>
 			<thead>
 				<tr>
+					<th>No.</th>
 					<th>과정</th>
 					<th>강사</th>
 					<th>최대수용인원</th>
@@ -126,6 +128,6 @@
 				
 	
 	<a href="<%=root %>/course/courseinsert"><button>추가</button></a>
-
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

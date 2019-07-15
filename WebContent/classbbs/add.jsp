@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,22 +33,24 @@
 	}
 %>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 <form action="" method="post">
 <input type="hidden" name="courseCode" value="<%=request.getParameter("courseCode")%>">
 <input type="hidden" name="postNum" value="<%=request.getParameter("postNum")%>">
 <input type="hidden" name="replyNum" value="<%=request.getParameter("replyNum")%>">
 <div>
-<label for="sub">Á¦¸ñ</label>
+<label for="sub">ì œëª©</label>
 <input type="text" name="sub" id="sub">
 <input type="checkbox" name="notice" id="notice">
-<label for="notice">°øÁö±Û</label>
+<label for="notice">ê³µì§€ê¸€</label>
 </div>
 <br/>
 <div>
 <textarea name="content" id="content"></textarea>
 </div>
-<button type="submit">È®ÀÎ</button>
-<button type="button">Ãë¼Ò</button>
+<button type="submit">í™•ì¸</button>
+<button type="button">ì·¨ì†Œ</button>
 </form>
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

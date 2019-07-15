@@ -15,6 +15,7 @@
 </script>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 <h1>QnA</h1>
 				<% String root= request.getContextPath(); %>
 	<form action="">
@@ -54,5 +55,6 @@
 			</tbody>
 		</table>
 	</form>
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

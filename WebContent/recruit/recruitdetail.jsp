@@ -20,6 +20,7 @@
 </script>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 	<div id="content">
 			<h2>상세 페이지</h2>
 			<%
@@ -77,6 +78,6 @@
 	<a href="#">[돌아가기]</a>  -->
 	
 
-
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

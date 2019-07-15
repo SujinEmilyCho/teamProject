@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 	<h1>회원가입을 축하드립니다!</h1>
 	<input value="로그인으로 돌아가기" type="button" name="backlogin" id="backlogin" onclick="location='<%=request.getContextPath()%>/login'">
 	<input value="메인으로 돌아가기" type="button" name="backindex" id="backindex" onclick="location='<%=request.getContextPath()%>'">
+<jsp:include page="/UI/footerUI.jsp"/>	
 </body>
 </html>

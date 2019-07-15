@@ -10,6 +10,7 @@
 </script>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 	<h1>아이디찾기</h1>
 	<form action="" method="post">
 	<label for="name">성함</label><br>
@@ -29,5 +30,6 @@
    Object obj =request.getAttribute("errnsg");
    if(obj!=null)out.print(obj);
    %>
+   <jsp:include page="/UI/footerUI.jsp"/>	
 </body>
 </html>

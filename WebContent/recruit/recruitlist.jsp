@@ -21,6 +21,7 @@
 </script>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 	<form action="recruit/recruitadd" method="get">
 	<table>
 		<thead>
@@ -53,6 +54,6 @@
 	
 	
 
-
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

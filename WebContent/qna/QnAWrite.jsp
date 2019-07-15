@@ -9,7 +9,7 @@
 
 </head>
 <body>
-
+<jsp:include page="/UI/headerUI.jsp"/>
 	<form action="" method="post">
 		<label  for="name">이 름</label>
 		<input type="text" name="name" id="name"><br>
@@ -33,5 +33,6 @@
 		<input type="reset" value="다시쓰기">
 		
 	</form>
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

@@ -40,6 +40,7 @@ $(function(){
 </script>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 <%
 	String root = request.getContextPath();
 	QnADto bean=(QnADto)request.getAttribute("bean");
@@ -80,6 +81,7 @@ $(function(){
 					<button type="submit">입력</button>
 					<button type="reset">취소</button>
 				</div>
-	</form>		
+	</form>
+<jsp:include page="/UI/footerUI.jsp"/>		
 </body>
 </html>

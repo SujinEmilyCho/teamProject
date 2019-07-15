@@ -32,6 +32,7 @@
 
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 <%
 	String root = request.getContextPath();
 %>
@@ -91,5 +92,6 @@
 				</div>
 			</form>		
 		</div>
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

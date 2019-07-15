@@ -20,13 +20,13 @@ public class ClassBbs extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-		req.getSession().invalidate();	//테스트용 라인, 기존 세션 종료
+//		req.getSession().invalidate();	//테스트용 라인, 기존 세션 종료
 		
 		HttpSession	session = req.getSession();
 		ClassBbs_Dao classBbsDao=new ClassBbs_Dao();
 		
-		session.setAttribute("accountNum", 1);	//테스트용 라인 강사: 8, 학생:9, 행정:1, 영업:2,  비회원: 6
-		session.setAttribute("accountType", 1); //테스트용 라인
+//		session.setAttribute("accountNum", 1);	//테스트용 라인 강사: 8, 학생:9, 행정:1, 영업:2,  비회원: 6
+//		session.setAttribute("accountType", 1); //테스트용 라인
 //		session.setAttribute("courseCode", "1906JAVA");//테스트용 라인
 		
 		//계정없는 경우

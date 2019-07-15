@@ -20,7 +20,7 @@ public class QnAController extends HttpServlet {
 	//그그그그 리스트 
 		req.setCharacterEncoding("UTF-8");
 		HttpSession session = req.getSession();
-		session.setAttribute("accountType", 2);		//테스트용 라인
+//		session.setAttribute("accountType", 2);		//테스트용 라인
 		int accountType=0;
 		if(session.getAttribute("accountType")!=null) {
 			accountType=(Integer)session.getAttribute("accountType");

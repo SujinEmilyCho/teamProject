@@ -93,6 +93,7 @@ $(document).ready(function() {
 			</script>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 	<div id=sh>
 		<select id =kind name=kind>
 			<option value=""></option>
@@ -205,7 +206,7 @@ $(document).ready(function() {
 								<option value="1906JAVA">1906JAVA</option>
 								<option value="1907DB" selected="selected"><%=bean.getCourseCode() %></option>
 							<%}else{ %>
-								<option value="nul">nul</option>
+								<option value="nul">null</option>
 								<option value="1905WEB">1905WEB</option> 
 								<option value="1906JAVA">1906JAVA</option>
 								<option value="1907DB">1907DB</option>
@@ -266,6 +267,6 @@ $(document).ready(function() {
 			</script>
 			
 			
-			
+<jsp:include page="/UI/footerUI.jsp"/>			
 </body>
 </html>

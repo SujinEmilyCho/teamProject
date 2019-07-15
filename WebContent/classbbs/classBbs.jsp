@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.ArrayList,com.bit.classbbs.model.ClassBbs_Dto, java.lang.Math"%>
 <!DOCTYPE html>
 <html>
@@ -43,6 +43,7 @@
 </script>
 <title>Insert title here</title>
 </head>
+<jsp:include page="/UI/headerUI.jsp"/>
 <body>
 <form action="">
 <%
@@ -103,4 +104,5 @@ int pages = (int)Math.ceil((total*1.0)/row);
 </div>
 </form>
 </body>
+<jsp:include page="/UI/footerUI.jsp"/>
 </html>

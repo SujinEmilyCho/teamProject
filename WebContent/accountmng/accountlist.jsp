@@ -29,6 +29,7 @@
 </script>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 	<form> <!-- action="accountedit.bit" method="post"> --><!--버튼 눌렀을 때 액션 동작, 이동하면서 텍스트필드의 값을 함께 가져간다. -->
 	
 	<!-- 계정관리 목록 부분 -->
@@ -82,5 +83,6 @@
 			<input type="button" value="수 정" onclick="editForm()">
 		
 	</form>
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

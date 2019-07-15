@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,17 +14,10 @@
 	text-decoration:none;
 	}
 </style>
-</script>
 </head>
 <body>
-	<div>
-	<%if(session.getAttribute("result")==null){ %>
-            <li><a href="<%=request.getContextPath() %>/login">LOGIN</a></li>
-            <%}else{ %>
-            <li><a href="<%=request.getContextPath() %>/logout">LOGOUT</a></li>
-            <p><%=session.getAttribute("name") %>님 어서오세요</p>
-            <%} %>
-	</div>
-	
+<jsp:include page="/UI/headerUI.jsp"/>
+	<img src="<%=request.getContextPath() %>/UI/imgs/camp.jpg"/>	
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

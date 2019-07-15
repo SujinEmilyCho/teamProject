@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR" import="com.bit.classbbs.model.ClassBbs_Dto,com.bit.classbbs.model.PostComment_Dto, java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="com.bit.classbbs.model.ClassBbs_Dto,com.bit.classbbs.model.PostComment_Dto, java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,11 +23,11 @@
 		$('#update').hide();
 		$('.edit').hide();
 		
-		//Ä¿¸ÇÆ® ÀÔ·Â
+		//ì»¤ë§¨íŠ¸ ì…ë ¥
 		$('#newComment').click(function(){
 			var value = $('#comment').val();
 			if(value){
-				var result = confirm("ÀúÀåÇÏ½Ã°Ú½À´Ï±î?");
+				var result = confirm("ì €ì¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 					if(result){
 						$.ajax({
 							url: "<%=context%>/classbbs/comment",
@@ -38,18 +38,18 @@
 								location.reload();
 							},
 							error: function(){
-								alert("½ÇÆĞ");
+								alert("ì‹¤íŒ¨");
 							}
 						});
 					}
 			}else{
-				alert("´ñ±ÛÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+				alert("ëŒ“ê¸€ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 			}
 		});
 		
-		//Ä¿¸ÇÆ® »èÁ¦
+		//ì»¤ë§¨íŠ¸ ì‚­ì œ
 		$('.deleteComment').click(function(){
-			var result=confirm("»èÁ¦ÇÏ½Ã°Ú½À´Ï±î?");
+			var result=confirm("ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 			if(result){
 				$.ajax({
 					url: "<%=context%>/classbbs/comment",
@@ -59,13 +59,13 @@
 						location.reload();
 					},
 					error: function(){
-						alert("»èÁ¦½ÇÆĞ");
+						alert("ì‚­ì œì‹¤íŒ¨");
 					}
 				});
 			}
 		});
 		
-		//´ä±Û ¹öÆ° ±â´É
+		//ë‹µê¸€ ë²„íŠ¼ ê¸°ëŠ¥
 		$('#reply').click(function(){
 			var type=<%=session.getAttribute("accountType")%>;
 			if(type!=1){
@@ -74,13 +74,13 @@
 				window.location.href="<%=context%>/classbbs/add?postNum=<%=bean.getPostNum()%>&replyNum=<%=bean.getReplyNum()%>&courseCode=<%=bean.getCourseCode()%>";
 			}
 		});
-		//µÚ·Î °¡±â ¹öÆ° ±â´É
+		//ë’¤ë¡œ ê°€ê¸° ë²„íŠ¼ ê¸°ëŠ¥
 		$('#back').click(function(){
 			window.history.back();
 		});		
-		//»èÁ¦ ¹öÆ° ±â´É
+		//ì‚­ì œ ë²„íŠ¼ ê¸°ëŠ¥
 		$('#delete').click(function(){
-			var result = confirm("»èÁ¦ÇÏ½Ã°Ú½À´Ï±î?");	
+			var result = confirm("ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?");	
 			if(result){
 				$.ajax({
 					url: "delete",
@@ -90,12 +90,12 @@
 						window.location.href="<%=context%>/classbbs";
 					},
 					error: function(){
-						alert("»èÁ¦ ½ÇÆĞ");
+						alert("ì‚­ì œ ì‹¤íŒ¨");
 					}
 				});
 			}
 		});	
-		//¼öÁ¤ ¹öÆ° ±â´É
+		//ìˆ˜ì • ë²„íŠ¼ ê¸°ëŠ¥
 		$('#edit').click(function(){
 			$('button').hide();
 			$('#cancel').show();
@@ -103,11 +103,11 @@
 			$('.detail').hide();
 			$('.edit').show();
 		});
-		//¼öÁ¤ ¹öÆ° > È®ÀÎ
+		//ìˆ˜ì • ë²„íŠ¼ > í™•ì¸
 		$('#update').click(function(){
 			
 		});
-		//¼öÁ¤ ¹öÆ° > Ãë¼Ò
+		//ìˆ˜ì • ë²„íŠ¼ > ì·¨ì†Œ
 		$('#cancel').click(function(){
 			$('button').show();
 			$('#cancle').hide();
@@ -119,20 +119,21 @@
 </script>
 <title>Insert title here</title>
 </head> 
+<jsp:include page="/UI/headerUI.jsp"/>
 <body>
 <form action="" method="post">
 <input type="hidden" name="num" id="num" value="<%=bean.getNum()%>">
 <div class="detail">
-<label>Á¦¸ñ</label><span><%= bean.getSub()%></span>
+<label>ì œëª©</label><span><%= bean.getSub()%></span>
 </div>
 <div class="edit">
-<label for="sub">Á¦¸ñ</label><input type="text" name="sub" id="sub" value="<%=bean.getSub()%>">
+<label for="sub">ì œëª©</label><input type="text" name="sub" id="sub" value="<%=bean.getSub()%>">
 <input type="checkbox" name="notice" id="notice" <%if(bean.getNotice()==1){out.print("checked");}%>>
-<label for="notice">°øÁö±Û</label>
+<label for="notice">ê³µì§€ê¸€</label>
 </div>
 <div>
-<label>ÀÛ¼ºÀÚ</label><span><%= bean.getName()%></span>
-<label>ÀÛ¼ºÀÏ</label><span><%= bean.getPostDate()%></span><br/>
+<label>ì‘ì„±ì</label><span><%= bean.getName()%></span>
+<label>ì‘ì„±ì¼</label><span><%= bean.getPostDate()%></span><br/>
 </div>
 <div class="detail">
 <span><%=bean.getContent()%></span>
@@ -142,7 +143,7 @@
 </div>
 <div>
 <input type="text" name="comment" id="comment">
-<button type="button" id="newComment">´ñ±ÛÀÔ·Â</button>
+<button type="button" id="newComment">ëŒ“ê¸€ì…ë ¥</button>
 </div>
 <div>
 <table>
@@ -157,7 +158,7 @@ for(int i=0; i<list.size(); i++){
 		<td><%=list.get(i).getName()%></td>
 		<td><%=list.get(i).getContent()%></td>
 		<%if(list.get(i).getAccountNum()==(Integer)session.getAttribute("accountNum")){%>
-		<td><button type="button" class="deleteComment" value="<%=list.get(i).getNum()%>">»èÁ¦</button></td>
+		<td><button type="button" class="deleteComment" value="<%=list.get(i).getNum()%>">ì‚­ì œ</button></td>
 		<%} %>
 	</tr>
 <% }%>
@@ -167,13 +168,14 @@ for(int i=0; i<list.size(); i++){
 <%
 if((Integer)session.getAttribute("accountNum")==bean.getAccountNum()){
 %>
-<button type="button" id="edit">¼öÁ¤</button>
-<button type="button" id="delete">»èÁ¦</button>
-<button type="submit" id="update">È®ÀÎ</button>
-<button type="button" id="cancel">Ãë¼Ò</button>
+<button type="button" id="edit">ìˆ˜ì •</button>
+<button type="button" id="delete">ì‚­ì œ</button>
+<button type="submit" id="update">í™•ì¸</button>
+<button type="button" id="cancel">ì·¨ì†Œ</button>
 <%} %>
-<button type="button" id="reply">´ä±Û</button>
-<button type="button" id="back">µ¹¾Æ°¡±â</button>
+<button type="button" id="reply">ë‹µê¸€</button>
+<button type="button" id="back">ëŒì•„ê°€ê¸°</button>
  </form>
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

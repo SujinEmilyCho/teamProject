@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 <h1>아직 준비중이에욤</h1>
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

@@ -12,6 +12,7 @@
 </style>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 	<form action="" method="post">
 	<h1>·Î±×ÀÎ</h1>
 	<div>
@@ -35,5 +36,6 @@
    Object obj =request.getAttribute("errnsg");
    if(obj!=null)out.print(obj);
    %>
+<jsp:include page="/UI/footerUI.jsp"/>	
 </body>
 </html>

@@ -33,6 +33,7 @@
 </script>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 <%
 	SimpleDateFormat format = new SimpleDateFormat ( "yyyy-MM-dd");
 	
@@ -90,6 +91,6 @@
 	
 	
 
-
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

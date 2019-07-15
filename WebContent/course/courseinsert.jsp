@@ -9,6 +9,7 @@
 </style>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 <%
 	String root = request.getContextPath();
 %>
@@ -49,6 +50,6 @@
 					<button type="button">뒤로</button>
 				</div>
 			</form>		
-
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

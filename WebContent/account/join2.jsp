@@ -24,6 +24,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/UI/headerUI.jsp"/>
 	<form action="" method="post">
 	 <div id="main">
 	 <h1>회원가입</h1>
@@ -50,5 +51,6 @@
 	 <button type="submit" id="join" name="join">가입하기</button>
 	 <input value="돌아가기" type="button" name="backindex" id="backindex" onclick="location='<%=request.getContextPath() %>'">
 	 </form>
+<jsp:include page="/UI/footerUI.jsp"/>	
 </body>
 </html>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR" import="java.util.ArrayList,com.bit.score.model.ScoreDto"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.util.ArrayList,com.bit.score.model.ScoreDto"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,14 +20,14 @@
 	$(document).ready(function(){
 <%if((Integer)session.getAttribute("accountType")==3){%>
 		$('button').eq(1).hide().next().hide();		
-		//ÀÔ·Â ¹öÆ° Å¬¸¯
+		//ì…ë ¥ ë²„íŠ¼ í´ë¦­
 		$('button').eq(0).click(function(){
 			$('button').show();
 			$(this).hide();
 			$('.span').hide();
 			$('.score').attr("type", "text");			
 		});		
-		//Ãë¼Ò ¹öÆ°
+		//ì·¨ì†Œ ë²„íŠ¼
 		$('button[type="reset"]').click(function(){
 			$('button').hide();
 			$('button[type="button"]').show();
@@ -42,52 +42,57 @@
 </script> 
 <title>Insert title here</title>
 </head>
-
 <body>
-<%
-if((Integer)session.getAttribute("accountType")==1){
-	ArrayList<String> codes=(ArrayList<String>)request.getAttribute("codes");
-%>
-	<select name="courseCode" id="courseCode">
-<%
-for(int i=0; i<codes.size(); i++){
-%>
-	<option <%if(codes.get(i).equals(request.getParameter("courseCode"))){out.print("selected");}%>><%=codes.get(i)%></option>
 
-<%}%>
-	</select>
-<%}%>
+<jsp:include page="/UI/headerUI.jsp"/>
 
-<form action="" method="post">
-<table>
-	<tr>
-		<th></th>
-		<th>ÀÌ¸§</th>
-		<th>test1</th>
-		<th>test2</th>
-		<th>test3</th>
-	</tr>
+
+	<%
+	if((Integer)session.getAttribute("accountType")==1){
+		ArrayList<String> codes=(ArrayList<String>)request.getAttribute("codes");
+	%>
+		<select name="courseCode" id="courseCode">
+	<%
+	for(int i=0; i<codes.size(); i++){
+	%>
+		<option <%if(codes.get(i).equals(request.getParameter("courseCode"))){out.print("selected");}%>><%=codes.get(i)%></option>
 	
-<%
-ArrayList<ScoreDto> list = (ArrayList<ScoreDto>)request.getAttribute("score");
-for(int i=0; i<list.size(); i++){
-%>
-	<tr>
-		<td><input type="hidden" name="accountNum" class="accountNum" value="<%=list.get(i).getAccountNum() %>"/><%=i+1 %></td>
-		<td><input type="hidden" name="name" class="name" value="<%=list.get(i).getName() %>"/><%=list.get(i).getName() %></td>
-		<td><input type="hidden" name="score" class="score" value="<%=list.get(i).getTest1() %>"/><span class="span"><%=list.get(i).getTest1() %></span></td>
-		<td><input type="hidden" name="score" class="score" value="<%=list.get(i).getTest2() %>"/><span class="span"><%=list.get(i).getTest2() %></span></td>
-		<td><input type="hidden" name="score" class="score" value="<%=list.get(i).getTest3() %>"/><span class="span"><%=list.get(i).getTest3() %></span></td>
-	</tr>
-<%
-}
-%>
-</table>
-<%if((Integer)session.getAttribute("accountType")==3){%>
-<button type="button">ÀÔ·Â</button>
-<button type="submit">ÀúÀå</button>
-<button type="reset">Ãë¼Ò</button>
-<%}%>
-</form>
+	<%}%>
+		</select>
+	<%}%>
+	
+	<form action="" method="post">
+	<table>
+		<tr>
+			<th></th>
+			<th>ì´ë¦„</th>
+			<th>test1</th>
+			<th>test2</th>
+			<th>test3</th>
+		</tr>
+		
+	<%
+	ArrayList<ScoreDto> list = (ArrayList<ScoreDto>)request.getAttribute("score");
+	for(int i=0; i<list.size(); i++){
+	%>
+		<tr>
+			<td><input type="hidden" name="accountNum" class="accountNum" value="<%=list.get(i).getAccountNum() %>"/><%=i+1 %></td>
+			<td><input type="hidden" name="name" class="name" value="<%=list.get(i).getName() %>"/><%=list.get(i).getName() %></td>
+			<td><input type="hidden" name="score" class="score" value="<%=list.get(i).getTest1() %>"/><span class="span"><%=list.get(i).getTest1() %></span></td>
+			<td><input type="hidden" name="score" class="score" value="<%=list.get(i).getTest2() %>"/><span class="span"><%=list.get(i).getTest2() %></span></td>
+			<td><input type="hidden" name="score" class="score" value="<%=list.get(i).getTest3() %>"/><span class="span"><%=list.get(i).getTest3() %></span></td>
+		</tr>
+	<%
+	}
+	%>
+	</table>
+	<%if((Integer)session.getAttribute("accountType")==3){%>
+	<button type="button">ì…ë ¥</button>
+	<button type="submit">ì €ì¥</button>
+	<button type="reset">ì·¨ì†Œ</button>
+	<%}%>
+	</form>
+
+<jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>
