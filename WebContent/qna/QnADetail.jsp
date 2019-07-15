@@ -6,14 +6,28 @@
 <html>
 <head>
 <style>
-  table {
-    width: 100%;
-    border: 1px solid #444444;
-    border-collapse: collapse;
-  }
-  th, td {
-    border: 1px solid #444444;
-  }
+  <style>
+ table{
+            border-top: 1px solid #444444;
+            border-collapse: collapse;
+            height: 300px;
+            width: 500px;
+            text-align: center;
+            
+        }
+        tr:nth-child(2n), td:nth-child(2n) {
+             
+            background-color: #bbdefb;
+        }
+        
+        tr:nth-child(2n+1), td:nth-child(2n+1) {
+            
+            background-color: bisque;
+            width: 10px;
+            
+        }
+
+</style>
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -52,35 +66,36 @@ $(function(){
 				<input type="hidden" id="num" name="num" value="<%=bean.getNum() %>" readonly="readonly"/>
 			
 			<table>
-				 
-				<tr>
-					<td><label for="name">작성자</label></td>
-					<td><span><%=bean.getName() %></span></td>
-					<td><label for="category">분류</label></td>
-					<td><span><%=bean.getCategory() %></span></td>
-				</tr>
-				<tr>
-					<td><label for="phone">연락처</label></td>
-					<td><span><%=bean.getPhone() %></span></td>
-					<td><label for="postdate">날짜</label></td>
-					<td><span><%=bean.getPostdate()%></span></td>
-				</tr>
-				<tr>
-					<td><label for="phone">제목</label></td>
-					<td><span><%=bean.getSub() %></span></td>
-					<td><label for="status">상태</label></td>
-					<td><span><%=bean.getStatus() %></span><input type="hidden" name="status" id="status" value="<%=bean.getStatus() %>" /></td>
-				</tr>
-				<tr>
-					<td colspan="4"><span><%=bean.getContent() %></span></td>
-				</tr>
-			</table>
-			
-				<div>
-					<button type="button" name="Modified">수정</button>
-					<button type="submit">입력</button>
-					<button type="reset">취소</button>
-				</div>
+             
+            <tr>
+               <td><label for="name">작성자</label></td>
+               <td><span><%=bean.getName() %></span></td>
+               <td><label for="category">분류</label></td>
+               <td><span><%=bean.getCategory() %></span></td>
+            </tr>
+            <tr>
+               <td><label for="phone">연락처</label></td>
+               <td><span><%=bean.getPhone() %></span></td>
+               <td><label for="postdate">날짜</label></td>
+               <td><span><%=bean.getPostdate()%></span></td>
+            </tr>
+            <tr>
+               <td><label for="phone">제목</label></td>
+               <td><span><%=bean.getSub() %></span></td>
+               <td><label for="status">상태</label></td>
+               <td><span><%=bean.getStatus() %></span><input type="hidden" name="status" id="status" value="<%=bean.getStatus() %>" style="width: 200px;"/></td>
+            </tr>
+            <tr>
+               <td colspan="4"><span><%=bean.getContent() %></span></td>
+            </tr>
+         </table>
+         
+            <div>
+               <button type="button" name="Modified">수정</button>
+               <button type="submit">입력</button>
+               <button type="reset">취소</button>
+            </div>
+
 	</form>
 <jsp:include page="/UI/footerUI.jsp"/>		
 </body>

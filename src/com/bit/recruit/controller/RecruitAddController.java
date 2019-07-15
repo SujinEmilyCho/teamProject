@@ -46,12 +46,12 @@ public class RecruitAddController extends HttpServlet {
 		
 		RecruitDao dao =new RecruitDao();
 		dao.addList(category, sub, period,content);
-		resp.sendRedirect(req.getContextPath()+"/recruit");
-		
-		
-		
-		
-		
+		dao =new RecruitDao();
+		int num=dao.getNum();
+		RequestDispatcher rd = req.getRequestDispatcher("recruitdetail?idx="+num);
+		rd.forward(req, resp);
+		//resp.sendRedirect(req.getContextPath()+"/recruitdetail?idx="+num);
+			
 		
 	}
 

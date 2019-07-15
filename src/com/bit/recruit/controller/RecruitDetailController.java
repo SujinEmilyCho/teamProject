@@ -21,9 +21,9 @@ public class RecruitDetailController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		HttpSession session =req.getSession();
-//		if(session.getAttribute("result")==null){
-//			resp.sendRedirect(req.getContextPath()+"/login/form.bit");
-//		}else{//로그인 사용자만 볼 수 있게
+		if(session.getAttribute("result")==null){
+			//resp.sendRedirect(req.getContextPath()+"/login/form.bit");
+			//}else{//로그인 사용자만 볼 수 있게
 			
 			//resp.sendRedirect(req.getContextPath()+"/recruit/recruitdetail.bit");
 			int num=Integer.parseInt(req.getParameter("idx"));
@@ -34,9 +34,29 @@ public class RecruitDetailController extends HttpServlet {
 			//여기서 루트는 해당프로젝트 부터이다. sendRedirect랑 다르게 -->이거는 포트번호 다음부터 다 쳐야됨
 			
 			rd.forward(req, resp);
+			}
 		}
 		
-	
+		@Override
+		protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+				throws ServletException, IOException {
+			req.setCharacterEncoding("UTF-8");
+			//int num = Integer.parseInt(req.getParameter("num"));
+			String category = req.getParameter("category");
+			//Date postdate =  req.getParameter("postdate");
+			String sub = req.getParameter("sub");
+			String period = req.getParameter("period");
+			String content = req.getParameter("content");
+			
+			System.out.println(category+" "+sub+" "+period+" "+content);
+			
+			RecruitDao dao =new RecruitDao();
+			dao.addList(category, sub, period,content);
+			resp.sendRedirect(req.getContextPath()+"/recruit/recruitdetail");
+			
+			
+		}
+
 
 	
 

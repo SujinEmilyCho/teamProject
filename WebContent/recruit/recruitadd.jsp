@@ -11,19 +11,42 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css"  href="../css/frame.css"/>
 <style type="text/css">
-	table{
+	body{
+        width:1920px;
+        height:900px;
+    }
+	div>table{
 		border-collapse: collapse;
+        text-align: center;
+        width: 700px;
+        margin: 0px auto;
 	}
-	table>thead>tr>th{
+	div>table>thead>tr>th{
+        
+		border:1px solid;
+        background-color: rgb(3,73,120);
+            font-size:25px;
+            color:white;
+	}
+	div>table>thead>tr>td{
 		border:1px solid;
 	}
-	table>thead>tr>td{
-		border:1px solid;
-	}
-	table>tbody>tr>td{
+	div>table>tbody>tr>td{
 		border:1px solid;
 		
 	}
+    div>#btn{
+        width: 1920px;
+        height: 40px;
+        display:inline-flex;
+        margin-left:760px;
+        margin-top:10px;
+    }
+    button{
+        width:200px;
+        height:40px;
+    }
+   
 </style>
 <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
 <script type="text/javascript">
@@ -35,14 +58,17 @@
 <body>
 <jsp:include page="/UI/headerUI.jsp"/>
 <%
-	SimpleDateFormat format = new SimpleDateFormat ( "yyyy-MM-dd");
-	
-	Date time = new Date();
+SimpleDateFormat format = new SimpleDateFormat ( "yyyy-MM-dd");
 
-	String nowDay = format.format(time);
+Date time = new Date();
+
+String nowDay = format.format(time);
+
+RecruitDto bean=(RecruitDto)request.getAttribute("bean");
 
 %>
 <form action="" method="post">
+	<div>
 	<table>
 
 		<thead>
@@ -83,14 +109,12 @@
 				</tr>
 		</tbody>
 	</table>
+	<div>
 	<button type="submit">저장</button>
 	<button type="reset">돌아가기</button>
-
+ </div>
+ </div>
 </form>
-
-	
-	
-
 <jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

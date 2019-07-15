@@ -14,10 +14,16 @@
 	}
 	table>thead>tr>th{
 		border:1px solid;
+        background-color: rgb(3,73,120);
+            font-size:25px;
+            color:white;
 	}
 	table>tbody>tr>td{
 		border:1px solid;
 	}
+    tbody tr:nth-child(2n+1) {
+            background-color: beige;
+        }
 	
 </style>
 <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
@@ -94,7 +100,7 @@ $(document).ready(function() {
 </head>
 <body>
 <jsp:include page="/UI/headerUI.jsp"/>
-	<div id=sh>
+	<!-- <div id=sh>
 		<select id =kind name=kind>
 			<option value=""></option>
 			<option value="at">회원타입</option>
@@ -103,7 +109,7 @@ $(document).ready(function() {
 		</select>	
 			<input type="text" id=serch name=search>
 			<input type="button" value="검색" onclick="Ajax()">
-	</div>
+	</div> -->
 	
 	<form action="<%=request.getContextPath() %>/account" method="get"> <!--버튼 눌렀을 때 액션 동작, 이동하면서 텍스트필드의 값을 함께 가져간다. -->
 	
@@ -206,7 +212,7 @@ $(document).ready(function() {
 								<option value="1906JAVA">1906JAVA</option>
 								<option value="1907DB" selected="selected"><%=bean.getCourseCode() %></option>
 							<%}else{ %>
-								<option value="nul">null</option>
+								<option value="nul">nul</option>
 								<option value="1905WEB">1905WEB</option> 
 								<option value="1906JAVA">1906JAVA</option>
 								<option value="1907DB">1907DB</option>
@@ -265,7 +271,6 @@ $(document).ready(function() {
 				//	location.replace("account.bit");
 				//}
 			</script>
-			
 			
 <jsp:include page="/UI/footerUI.jsp"/>			
 </body>

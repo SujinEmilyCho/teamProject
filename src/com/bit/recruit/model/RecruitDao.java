@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.bit.util.MyOracle;
+
 public class RecruitDao {
 	private String driver="oracle.jdbc.driver.OracleDriver";
 	private String url="jdbc:oracle:thin:@localhost:1521:xe";
@@ -125,6 +127,55 @@ public class RecruitDao {
 				if(conn!=null)conn.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+
+	public int getNum(){
+		int result=0;
+		
+		String sql="SELECT MAX(num) AS NUM FROM Recruitbbs";
+		
+		try{
+			pstmt=conn.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				result=rs.getInt("NUM");
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		System.out.println(result);
+		return result;
+	}
+	
+	public void deletePost(int num) {
+		String sql="delete Recruitbbs where num=?";
+		System.out.println("메서드 실행");
+		Connection conn = MyOracle.getConnection();
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			int result=pstmt.executeUpdate();
+			System.out.println(result);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}

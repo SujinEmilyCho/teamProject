@@ -9,7 +9,7 @@ create table account(
 	email varchar2(50) not null,
 	phone number(11) not null,
 	bday date not null,
-	accountType number constraint account_accountType_ck check(accountType in (1, 2, 3, 4)),
+	accountType number constraint account_accountType_ck check(accountType in (0,1, 2, 3, 4)),
 	courseCode varchar2(10) default null
 );
 
@@ -38,4 +38,3 @@ insert into account values (account_seq.nextval, 'user11', '1234', '학생11', 'us
 insert into account values (account_seq.nextval, 'user12', '1234', '학생12', 'user12@naver.com', 01012345678, '94/08/06', 4, '1904DB');
 
 commit
-
