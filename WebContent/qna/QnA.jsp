@@ -13,6 +13,27 @@
 		
 	});
 </script>
+<style type="text/css">
+table {
+             border-top: 1px solid #444444;
+            border-collapse: collapse;
+            text-align: center;
+        }
+         th, td {
+            border-bottom: 1px solid #444444;
+            padding: 10px;
+        }
+        tbody tr:nth-child(2n) {
+            background-color: ;
+        }
+        tbody tr:nth-child(2n+1) {
+            background-color: beige;
+        }
+        #headtr {
+            background-color: skyblue;
+        }
+
+</style>
 </head>
 <body>
 <jsp:include page="/UI/headerUI.jsp"/>
@@ -20,7 +41,7 @@
 				<% String root= request.getContextPath(); %>
 	<form action="">
 	<table> 
-			<thead>
+			<thead id="headtr">
 				<tr>
 					<th>NO</th>
 					<th>제목</th>

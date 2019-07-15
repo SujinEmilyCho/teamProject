@@ -9,6 +9,8 @@ create table Qnabbs(
 	category varchar2(20),
 	status varchar2(15)
 );
-commit;
+
 create sequence QnAbbs_seq;
+
 insert into QNAbbs values(QnAbbs_seq.nextval,'김지수',01098989845,sysdate,'제목','내용 내용 내용','JAVA','미완료');
+commit;

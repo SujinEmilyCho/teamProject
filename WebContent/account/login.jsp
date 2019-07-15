@@ -30,8 +30,8 @@
             color:rgb(3,73,120);
             font-weight:bold;
         }
-        #input{
-            width:80px;
+        #ID>#input{
+        	width:80px;
             height:60px;
             font-size:35px;
         }

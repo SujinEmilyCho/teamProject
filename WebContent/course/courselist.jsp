@@ -25,7 +25,7 @@ h1{
             width:800px;
             margin-bottom:50px;
         }
-   #courselist{
+   		#courselist{
    			width:1600px;
    			margin:auto;
             border-collapse: collapse;
@@ -38,9 +38,16 @@ h1{
         }
         tbody tr:nth-child(2n) {
             background-color: white;
+            text-decoreaiton:none;
         }
         tbody tr:nth-child(2n+1) {
             background-color: beige;
+        }
+        tbody>tr>td>a{
+        	text-decoration:none;
+        	color:black;
+        	font-size:23px;
+        	font-weight:bold;
         }
         #headtr {
             background-color: rgb(3,73,120);
@@ -50,7 +57,7 @@ h1{
         #searchcourse{
         	margin-left:560px;
         	display:inline-flex;
-        	width:900px;
+        	width:1000px;
         	height:200px;
         	text-align:center;
         }
@@ -111,7 +118,6 @@ h1{
 	 <h1>과정 관리</h1>
 	 <hr>
 	<form action="course">
-
 		<table id="courselist">
 			<thead id="headtr">
 				<tr>
@@ -201,9 +207,9 @@ h1{
 					}
 				%>
 						</select>
-						<input type="submit" for="search" value="조회">
-						<input type="text" name ="search" value="null">
-						<input type="submit" for="search" value="검색">
+						<input type="submit" for="search" value="조회" id="jo">
+						<input type="text" name ="search" value="null" onfocus="this.value='';return true;">
+						<input type="submit" for="search" value="검색" id="sear">
 				</form>		
 				<a href="<%=root %>/course/courseinsert">추가</a>
 				</div>
