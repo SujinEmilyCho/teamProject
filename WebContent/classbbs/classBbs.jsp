@@ -114,7 +114,7 @@
 			if(courseCode){
 				window.location.href="<%=context%>/classbbs/add?courseCode="+courseCode;
 			}else{
-				window.location.href=window.location.href+"/add";
+				window.location.href="<%=context%>/classbbs/add";
 			}
 		});
 		
