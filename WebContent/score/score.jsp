@@ -5,11 +5,58 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
-	th{
-		width: 200px;
+	  h1{
+            width:800px;
+            height:50px;
+            text-align: center;
+            color:rgb(3,73,120);
+            font-weight: bolder;
+            margin: auto;
+            font-size:40px;
+            padding-bottom: 30px;
+        }
+      hr{
+            border:1px solid lightgray;
+            width:800px;
+            margin-bottom:50px;
+        }
+	#scoreContent{
+		width: 1200px;
+		margin: 0px auto;
 	}
-	th:nth-child(1){
-		width: 20px;
+	#scoreContent table{
+		width: 1200px;
+		border-collapse: collapse;
+        text-align: center;
+        margin-bottom:50px;		
+        font-size: 20px;
+	}
+	#scoreContent th, td {
+            border-bottom: 1px solid white;
+            padding: 10px;
+    }
+    #scoreContent tbody tr:nth-child(2n) {
+        background-color: white;
+    }
+    #scoreContent tbody tr:nth-child(2n+1) {
+        background-color: beige;
+    }
+    #scoreContent table th{
+		 background-color: rgb(3,73,120);
+         font-size:25px;
+         color:white;
+	}
+	#scoreContent select{
+		font-size:20px;
+	}
+	#scoreContent button{
+		font-size:20px;
+    	color:white;
+        border:1px solid white;
+        font-weight: bold;
+        width:80px;
+        height:40x;
+        background-color:rgb(3,73,120);
 	}
 </style>
 <%
@@ -45,8 +92,9 @@
 <body>
 
 <jsp:include page="/UI/headerUI.jsp"/>
-
-
+<h1>성적</h1>
+<hr>
+<div id="scoreContent">
 	<%
 	if((Integer)session.getAttribute("accountType")==1){
 		ArrayList<String> codes=(ArrayList<String>)request.getAttribute("codes");
@@ -59,6 +107,7 @@
 	
 	<%}%>
 		</select>
+		<br/><br/>
 	<%}%>
 	
 	<form action="" method="post">
@@ -90,9 +139,10 @@
 	<button type="button">입력</button>
 	<button type="submit">저장</button>
 	<button type="reset">취소</button>
+	<br/><br/><br/>
 	<%}%>
 	</form>
-
+</div>
 <jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

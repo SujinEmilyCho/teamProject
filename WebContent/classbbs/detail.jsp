@@ -14,7 +14,68 @@
 	}
 %>
 <style type="text/css">
-
+	#detailContent{
+		width: 1100px;
+		margin: 0px auto;
+		font-size: 25px;
+	}
+	#detailContent label{
+		display: inline-block;
+		width: 100px;
+		font-size:25px;
+        font-weight: bold;
+        color:rgb(3,73,120);
+	}
+	#sub{
+		font-size: 25px;
+		width: 850px;
+	}
+	
+	#detailContent table{
+		font-size: 20px;
+		width: 1000px;
+		margin: 0px auto;
+	}
+	#detailContent table td:nth-child(1), #detailContent table td:nth-child(2), #detailContent table td:nth-child(4){
+		width: 100px;
+	}
+	#detailContent table td:nth-child(3){
+		text-align: left;
+	}
+	#detailContent button{
+		font-size:20px;
+    	color:white;
+        border:1px solid white;
+        font-weight: bold;
+        width:100px;
+        height:40x;
+        background-color:rgb(3,73,120);
+	}
+	#buttons{
+		margin: 0px auto;
+		text-align: center;
+	}
+	#buttons button{
+		margin-left: 100px;
+	}
+	textarea{
+		width: 1000px;
+		height: 400px;
+		font-size: 25px;
+		margin: 0px auto;
+	}
+	.detail>span:nth-child(1){
+		display: inline-block;
+		width: 1000px;
+		height: 400px;
+	}
+	#commentDiv {
+		text-align: center;
+	}
+	#comment{
+		width: 890px;
+		height: 25px;
+	}
 </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -110,7 +171,7 @@
 		//수정 버튼 > 취소
 		$('#cancel').click(function(){
 			$('button').show();
-			$('#cancle').hide();
+			$('#cancel').hide();
 			$('#update').hide();
 			$('.detail').show();
 			$('.edit').hide();
@@ -121,61 +182,75 @@
 </head> 
 <jsp:include page="/UI/headerUI.jsp"/>
 <body>
-<form action="" method="post">
-<input type="hidden" name="num" id="num" value="<%=bean.getNum()%>">
-<div class="detail">
-<label>제목</label><span><%= bean.getSub()%></span>
-</div>
-<div class="edit">
-<label for="sub">제목</label><input type="text" name="sub" id="sub" value="<%=bean.getSub()%>">
-<input type="checkbox" name="notice" id="notice" <%if(bean.getNotice()==1){out.print("checked");}%>>
-<label for="notice">공지글</label>
-</div>
-<div>
-<label>작성자</label><span><%= bean.getName()%></span>
-<label>작성일</label><span><%= bean.getPostDate()%></span><br/>
-</div>
-<div class="detail">
-<span><%=bean.getContent()%></span>
-</div>
-<div class="edit">
-<textarea rows="" cols="" name="content" id="content"><%=bean.getContent()%></textarea>
-</div>
-<div>
-<input type="text" name="comment" id="comment">
-<button type="button" id="newComment">댓글입력</button>
-</div>
-<div>
-<table>
-<thead>
-</thead>
-<tbody>
-<%
-for(int i=0; i<list.size(); i++){
-%>
-	<tr>
-		<td><%=list.get(i).getPostDate()%></td>
-		<td><%=list.get(i).getName()%></td>
-		<td><%=list.get(i).getContent()%></td>
-		<%if(list.get(i).getAccountNum()==(Integer)session.getAttribute("accountNum")){%>
-		<td><button type="button" class="deleteComment" value="<%=list.get(i).getNum()%>">삭제</button></td>
+<div id="detailContent">
+	<form action="" method="post">
+	<input type="hidden" name="num" id="num" value="<%=bean.getNum()%>">
+	<div class="detail">
+		<label>제목</label>
+		<span><%= bean.getSub()%></span>
+	</div>
+	<div class="edit">
+		<label for="sub">제목</label>
+		<input type="text" name="sub" id="sub" value="<%=bean.getSub()%>">
+		<input type="checkbox" name="notice" id="notice" <%if(bean.getNotice()==1){out.print("checked");}%>>
+		<label for="notice">공지글</label>
+	</div>
+	<div>
+		<label>작성자</label>
+		<span><%= bean.getName()%></span><br/>
+		<label>작성일</label>
+		<span><%= bean.getPostDate()%></span><br/><br/>
+	</div>
+	<div class="detail">
+		<span><%=bean.getContent()%></span>
+	</div>
+	<div class="edit">
+		<textarea rows="" cols="" name="content" id="content"><%=bean.getContent()%></textarea>
+	</div>
+	<br/><br/>
+	<div class="detail" id=commentDiv>
+		<input type="text" name="comment" id="comment">
+		<button type="button" id="newComment">댓글입력</button>
+		<br/><br/>
+	</div>
+	<div class="detail">
+		<table>
+			<thead>
+			</thead>
+			<tbody>
+			<%
+			for(int i=0; i<list.size(); i++){
+			%>
+				<tr>
+					<td><%=list.get(i).getPostDate()%></td>
+					<td><%=list.get(i).getName()%></td>
+					<td><%=list.get(i).getContent()%></td>
+					<%if(list.get(i).getAccountNum()==(Integer)session.getAttribute("accountNum")){%>
+					<td><button type="button" class="deleteComment" value="<%=list.get(i).getNum()%>">삭제</button></td>
+					<%}else{%>
+					<td>&nbsp;</td>	
+					<%} %>
+				</tr>
+			<% }%>
+			</tbody>
+		</table>
+	</div>
+	<br/>
+	<div id="buttons">
+		<%
+		if((Integer)session.getAttribute("accountNum")==bean.getAccountNum()){
+		%>
+		<button type="button" id="edit">수정</button>
+		<button type="button" id="delete">삭제</button>
+		<button type="submit" id="update">확인</button>
+		<button type="button" id="cancel">취소</button>
 		<%} %>
-	</tr>
-<% }%>
-</tbody>
-</table>
-</div>
-<%
-if((Integer)session.getAttribute("accountNum")==bean.getAccountNum()){
-%>
-<button type="button" id="edit">수정</button>
-<button type="button" id="delete">삭제</button>
-<button type="submit" id="update">확인</button>
-<button type="button" id="cancel">취소</button>
-<%} %>
-<button type="button" id="reply">답글</button>
-<button type="button" id="back">돌아가기</button>
- </form>
+		<button type="button" id="reply">답글</button>
+		<button type="button" id="back">돌아가기</button>
+		 </form>
+	</div>
+	<br/><br/>
+ </div>
 <jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

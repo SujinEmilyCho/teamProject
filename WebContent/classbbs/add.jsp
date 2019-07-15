@@ -5,15 +5,51 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
-	#sub{
-		width: 680px;
+ h1{
+            width:800px;
+            height:50px;
+            text-align: center;
+            color:rgb(3,73,120);
+            font-weight: bolder;
+            margin: auto;
+            font-size:40px;
+            padding-bottom: 30px;
+        }
+      hr{
+            border:1px solid lightgray;
+            width:800px;
+            margin-bottom:50px;
+        }
+	#addContent{
+		width: 1600px;
+		margin: 0px auto;
+		text-align:center;
 	}
-	label{
-		width: 100px;
+	#addContent label{
+		font-size:25px;
+        font-weight: bold;
+        color:rgb(3,73,120);
+	}
+	#sub{
+		font-size: 25px;
+		width: 850px;
 	}
 	#content{
-		width: 800px;
+		font-size: 25px;
+		width: 1000px;
 		height: 400px;
+	}
+	#notice{
+		width: 25px;
+	}
+	#addContent button{
+		font-size:20px;
+    	color:white;
+        border:1px solid white;
+        font-weight: bold;
+        width:80px;
+        height:40x;
+        background-color:rgb(3,73,120);
 	}
 </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
@@ -34,6 +70,9 @@
 %>
 <body>
 <jsp:include page="/UI/headerUI.jsp"/>
+<div id="addContent">
+<h1>글쓰기</h1>
+<hr>
 <form action="" method="post">
 <input type="hidden" name="courseCode" value="<%=request.getParameter("courseCode")%>">
 <input type="hidden" name="postNum" value="<%=request.getParameter("postNum")%>">
@@ -50,7 +89,9 @@
 </div>
 <button type="submit">확인</button>
 <button type="button">취소</button>
+<br/><br/>
 </form>
+</div>
 <jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

@@ -35,6 +35,7 @@ public class ClassBbs_Detail extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
 		//edit 기능 처리
 		ClassBbs_Dao classBbsDao = new ClassBbs_Dao();
 		int num=Integer.parseInt(req.getParameter("num"));

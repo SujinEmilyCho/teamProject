@@ -36,6 +36,7 @@ public class ClassBbs_Add extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
 		ClassBbs_Dao classBbsDao = new ClassBbs_Dao();	
 		int result=0;
 		HttpSession session = req.getSession();		
