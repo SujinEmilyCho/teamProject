@@ -80,8 +80,10 @@
 <div>
 <label for="sub">제목</label>
 <input type="text" name="sub" id="sub">
+<%if((Integer)session.getAttribute("accountType")==1 || (Integer)session.getAttribute("accountType")==2){ %>
 <input type="checkbox" name="notice" id="notice">
 <label for="notice">공지글</label>
+<%} %>
 </div>
 <br/>
 <div>

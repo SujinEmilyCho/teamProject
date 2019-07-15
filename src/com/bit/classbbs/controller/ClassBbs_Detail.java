@@ -46,7 +46,7 @@ public class ClassBbs_Detail extends HttpServlet {
 		if(req.getParameter("notice")!=null) {
 			notice=1;
 		}
-		System.out.println(req.getParameter("notice"));
+
 		int result = classBbsDao.editPost(num, sub, content, notice);
 		if(result==1) {
 			resp.sendRedirect(req.getContextPath()+"/classbbs");

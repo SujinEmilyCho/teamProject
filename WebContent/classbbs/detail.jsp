@@ -192,8 +192,10 @@
 	<div class="edit">
 		<label for="sub">제목</label>
 		<input type="text" name="sub" id="sub" value="<%=bean.getSub()%>">
+		<%if((Integer)session.getAttribute("accountType")==1||(Integer)session.getAttribute("accountType")==2){ %>
 		<input type="checkbox" name="notice" id="notice" <%if(bean.getNotice()==1){out.print("checked");}%>>
 		<label for="notice">공지글</label>
+		<%} %>
 	</div>
 	<div>
 		<label>작성자</label>

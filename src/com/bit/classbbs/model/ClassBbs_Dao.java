@@ -16,12 +16,12 @@ public class ClassBbs_Dao {
 	public ArrayList<ClassBbs_Dto> getList(String courseCode, String keyword) {
 		ArrayList<ClassBbs_Dto> list=new ArrayList<ClassBbs_Dto>();
 		ClassBbs_Dto bean=null;
-		String previousSql="select num, sub, postDate, replyNum, (select name from account where account.accountNum=classBbs.accountNum) as name "
-				+ "from ClassBbs where courseCode =? and (sub like ? or content like ?) order by postNum desc, replynum asc";
+//		String previousSql="select num, sub, postDate, replyNum, (select name from account where account.accountNum=classBbs.accountNum) as name "
+//				+ "from ClassBbs where courseCode =? and (sub like ? or content like ?) order by postNum desc, replynum asc";
 		String sql1="select count(*) from classbbs where courseCode=? and (sub like ? or content like?)";
-		String sql2="select * from (select rownum as rn, num, sub, postDate, replyNum, name "
+		String sql2="select * from (select rownum as rn, num, sub, postDate, replyNum, notice, name "
 				+ "from (select (select name from account where account.accountNum=classBbs.accountNum) as name, ClassBbs.* "
-				+ "from ClassBbs where courseCode =? and (sub like ? or content like ?) order by postNum desc, replynum asc)) where 0<rn and rn<=300";
+				+ "from ClassBbs where courseCode =? and (sub like ? or content like ?) order by notice desc, postNum desc, replynum asc)) where 0<rn and rn<=300";
 		Connection conn=MyOracle.getConnection();
 		try {
 			conn.setAutoCommit(false);
@@ -47,6 +47,7 @@ public class ClassBbs_Dao {
 				bean.setSub(rs.getString("sub"));
 				bean.setName(rs.getString("name"));
 				bean.setPostDate(rs.getDate("postDate"));
+				bean.setNotice(rs.getInt("notice"));
 				list.add(bean);
 			}
 			conn.commit();

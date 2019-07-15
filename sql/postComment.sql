@@ -3,7 +3,7 @@ drop sequence postComment_seq;
 
 create table postComment(
 	num number primary key,
-	classBbsNum references classBbs(num) not null,
+	classBbsNum references classBbs(num) on delete cascade not null,
 	accountNum references account(accountNum) not null,	
 	content varchar2(600) not null,
 	postdate date default sysdate not null
