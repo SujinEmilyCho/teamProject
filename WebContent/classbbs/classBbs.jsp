@@ -161,7 +161,7 @@
 		%>
 		<tr class="<%if(list.get(i).getNotice()==1){out.print("notice");} %>">
 			<td><%=i+1 %></td>
-			<td><a href="<%=context %>/classbbs/detail?index=<%=list.get(i).getNum()%>"><%if(list.get(i).getReplyNum()>0){out.print("&nbsp;&nbsp;&nbsp;&nbsp;re)");}%><%=list.get(i).getSub() %></a></td>
+			<td><a href="<%=context %>/classbbs/detail?index=<%=list.get(i).getNum()%>"><%if(list.get(i).getReplyNum()>0){out.print("&nbsp;&nbsp;&nbsp;&nbsp;re:");}%><%=list.get(i).getSub() %></a></td>
 			<td><%=list.get(i).getName() %></td>
 			<td><%=list.get(i).getPostDate() %></td>
 		</tr>
