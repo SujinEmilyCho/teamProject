@@ -129,7 +129,7 @@
 					<input type="hidden" name="maxstu" id="maxstu" value="<%=bean.getMaxstu() %>"/>
 				</div>
 				<div>
-					<label for="hidden">현재수용인원 : </label>
+					<label for="hidden">교실 : </label>
 					<span><%=bean.getClassroom() %></span>
 					<input type="hidden" name="classroom" id="classroom" value="<%=bean.getClassroom()%>"/>
 				</div>
@@ -139,7 +139,7 @@
 					<input type="hidden" name="period" id="period" value="<%=bean.getPeriod() %>"/>
 				</div>
 				<div>
-					<label for="status">교실 : </label>
+					<label for="status">상태 : </label>
 					<span><%=bean.getStatus() %></span>
 					<input type="hidden" name="status" id="status" value="<%=bean.getStatus() %>"/>
 				</div>

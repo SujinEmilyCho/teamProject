@@ -26,7 +26,7 @@ public class CourseDetailController extends HttpServlet{
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
+		req.setCharacterEncoding("utf-8");
 		String title=req.getParameter("title");
 		String teacher=req.getParameter("teacher");
 		int maxstu=Integer.parseInt(req.getParameter("maxstu"));
@@ -34,7 +34,7 @@ public class CourseDetailController extends HttpServlet{
 		String period=req.getParameter("period");
 		String status=req.getParameter("status");
 		String coursecode=req.getParameter("coursecode");
-		
+
 		CourseDao dao=new CourseDao();
 		dao.edit(coursecode, title, teacher, maxstu, classroom, period, status);
 		
