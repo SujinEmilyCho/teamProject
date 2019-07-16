@@ -5,30 +5,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-  <style>
- table{
-            border-top: 1px solid #444444;
-            border-collapse: collapse;
-            height: 300px;
-            width: 500px;
+<style type="text/css">
+        h2 {
             text-align: center;
-            
-        }
-        tr:nth-child(2n), td:nth-child(2n) {
-             
-            background-color: #bbdefb;
-        }
-        
-        tr:nth-child(2n+1), td:nth-child(2n+1) {
-            
-            background-color: bisque;
-            width: 10px;
-            
+            color: rgb(3, 73, 120);
+            font-weight: bolder;
+            margin: auto;
+            font-size: 35px;
+            padding-bottom: 30px;
         }
 
-</style>
-</style>
+        hr {
+            border: 1px solid lightgray;
+            width: 800px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            height: 300px;
+            width: 800px;
+            text-align: center;
+            margin: auto;
+            margin-bottom: 20px;
+            border:1px solid lightgray;
+        }
+        tr,td:nth-child(2n-1){
+            background-color:rgb(3,73,120);
+            border-bottom:1px solid white;
+        }
+        tr,td:nth-child(2n-1)>label{
+            font-size:20px;
+            font-weight: bold;
+            color:white;
+        }
+        tr,td:nth-child(2n){
+            background-color:white;
+        }
+        tr,td:nth-child(2n)>span{
+            font-size:20px;
+            color:black;
+        }
+        #content>td{
+            color:black;
+            background-color:white;
+            border-bottom: 1px solid lightgray;
+        }
+        #btn{
+            text-align: center;
+        }
+        #btn>button{
+            width:90px;
+            height:30px;
+            border:1px solid white;
+            background-color:rgb(3,73,120);
+            color:white;
+            font-size:18px;
+            font-weight: bold;
+        }
+    </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
@@ -63,6 +98,7 @@ $(function(){
 
 	<form action="" method="post">
 				<h2><%=bean.getNum() %>번 게시글</h2>
+				<hr>
 				<input type="hidden" id="num" name="num" value="<%=bean.getNum() %>" readonly="readonly"/>
 			
 			<table>
@@ -85,12 +121,12 @@ $(function(){
                <td><label for="status">상태</label></td>
                <td><span><%=bean.getStatus() %></span><input type="hidden" name="status" id="status" value="<%=bean.getStatus() %>" style="width: 200px;"/></td>
             </tr>
-            <tr>
+            <tr id="content">
                <td colspan="4"><span><%=bean.getContent() %></span></td>
             </tr>
          </table>
-         
-            <div>
+          <hr>
+        <div id="btn">
                <button type="button" name="Modified">수정</button>
                <button type="submit">입력</button>
                <button type="reset">취소</button>

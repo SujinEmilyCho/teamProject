@@ -19,20 +19,18 @@
         text-align: center;
         width: 700px;
         margin: 0px auto;
+        margin-top:20px;
+        margin-bottom: 20px;
 	}
 	div>table>thead>tr>th{
 		border:1px solid;
-         background-color: rgb(3,73,120);
-            font-size:25px;
-            color:white;
+        background-color: rgb(3,73,120);
+        font-size:20px;
+        color:white;
 	}
 	div>table>thead>tr>td{
-		border:1px solid;
-        
-	}
-	div>table>tbody>tr>td{
-		border:1px solid;
-		
+		border-bottom:1px solid lightgray;
+        margin-bottom: 10px;
 	}
     div>#btn{
         width: 1920px;
@@ -40,10 +38,25 @@
         display:inline-flex;
         margin-left:760px;
         margin-top:10px;
+        text-align: center;
     }
-    button{
-        width:200px;
+    #btn>button{
+        width:120px;
         height:40px;
+        background-color:rgb(3,73,120);
+        color:white;
+        border:1px solid white;
+        font-size:20px;
+        font-weight: bold;
+    }
+    #btn>form>button{
+        width:120px;
+        height:40px;
+        background-color:rgb(3,73,120);
+        color:white;
+        border:1px solid white;
+        font-size:20px;
+        font-weight: bold;
     }
 </style>
 <%

@@ -29,6 +29,9 @@ public class Score extends HttpServlet {
 //		session.setAttribute("accountType", 1); //테스트용 라인
 //		session.setAttribute("courseCode", "1906JAVA");//테스트용 라인
 		
+		System.out.println(session.getAttribute("accountNum"));
+		System.out.println(session.getAttribute("accountType"));
+		
 		//계정없는 경우
 		if(session.getAttribute("accountNum")==null) {
 			resp.sendRedirect(req.getContextPath()+"/error/loginRequired.jsp"); // 에러페이지 컨트롤러 만들기
@@ -38,6 +41,8 @@ public class Score extends HttpServlet {
 			resp.sendRedirect(req.getContextPath()+"/error/notAuthorized.jsp"); // 에러페이지 컨트롤러 만들기
 			return;
 		}
+		
+		
 		
 		//계정 타입별 동작
 		int accountNum= (Integer)session.getAttribute("accountNum");

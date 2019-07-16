@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css"  href="../css/frame.css"/>
 <style type="text/css">
-	body{
+	  body{
         width:1920px;
         height:900px;
     }
@@ -20,33 +20,31 @@
         text-align: center;
         width: 700px;
         margin: 0px auto;
+        margin-top:20px;
+        margin-bottom: 20px;
 	}
 	div>table>thead>tr>th{
-        
 		border:1px solid;
         background-color: rgb(3,73,120);
-            font-size:25px;
-            color:white;
+        font-size:20px;
+        color:white;
 	}
 	div>table>thead>tr>td{
-		border:1px solid;
+		border-bottom:1px solid lightgray;
+        margin-bottom: 10px;
 	}
-	div>table>tbody>tr>td{
-		border:1px solid;
-		
-	}
-    div>#btn{
-        width: 1920px;
-        height: 40px;
-        display:inline-flex;
-        margin-left:760px;
-        margin-top:10px;
+    #btn{
+        text-align:center;
     }
-    button{
-        width:200px;
+    #btn>button{
+        width:120px;
         height:40px;
+        background-color:rgb(3,73,120);
+        color:white;
+        border:1px solid white;
+        font-size:20px;
+        font-weight: bold;
     }
-   
 </style>
 <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
 <script type="text/javascript">
@@ -109,7 +107,7 @@ RecruitDto bean=(RecruitDto)request.getAttribute("bean");
 				</tr>
 		</tbody>
 	</table>
-	<div>
+	<div id="btn">
 	<button type="submit">저장</button>
 	<button type="reset">돌아가기</button>
  </div>

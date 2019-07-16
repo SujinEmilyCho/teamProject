@@ -24,11 +24,14 @@
     hr{
             border:1px solid lightgray;
             width:800px;
-            margin-bottom:50px;
+            margin-bottom:20px;
         }
     
 	table{
+        width:800px;
+        margin:0px auto;
 		border-collapse: collapse;
+        margin-bottom: 30px;
 	}
 	table>thead>tr>th{
 		border:1px solid;
@@ -44,6 +47,15 @@
         }
     #edit{
     	text-align:center;
+    }
+    #edit>input{
+        width:90px;
+        height:40px;
+        background-color:rgb(3,73,120);
+        color:white;
+        font-size:20px;
+        font-weight: bold;
+        border:1px solid white;
     }
 </style>
 <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
@@ -62,7 +74,7 @@ function editForm(){
 	
 	<!-- 계정관리 목록 부분 -->
 	<div id="account">
-		<table>
+		<table id="gra_account">
 			<thead>
 				<tr>
 					<th>계정 번호</th>

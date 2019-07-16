@@ -24,7 +24,7 @@
     hr{
             border:1px solid lightgray;
             width:800px;
-            margin-bottom:50px;
+            margin-bottom:30px;
         }
     
 	table{
@@ -32,6 +32,7 @@
         text-align: center;
          width: 700px;
          margin: 0px auto;
+        margin-bottom: 20px;
 	}
     table>thead>tr>th{
 		border:1px solid;
@@ -56,16 +57,17 @@
     tbody tr:nth-child(2n+1) {
             background-color: beige;
         }
-    body>form>button{
-       width: 70px;
-        height: 30px;
-        position: absolute;
-        top:0;
-        right: 0;
-        bottom:0;
-        left: 0;
-        margin: auto;
-        
+    div{
+        text-align: center;
+    }
+    #write{
+        width:120px;
+        height:40px;
+        font-size:20px;
+        font-weight: bold;
+        background-color:rgb(3,73,120);
+        color:white;
+        border:1px solid white;
     }
 </style>
 <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
@@ -107,8 +109,9 @@
 		</tbody>
 	</table>
 	<hr>
-	
-	<button type="submit">글쓰기</button>
+	<div>
+	<button type="submit"  id="write">글쓰기</button>
+	</div>
 	</form>
 	
 	

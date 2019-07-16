@@ -14,15 +14,38 @@
 	});
 </script>
 <style type="text/css">
+    h1{
+    width:800px;
+    height:50px;
+    text-align: center;
+    color:rgb(3,73,120);
+    font-weight: bolder;
+    margin: auto;
+    font-size:40px;
+    padding-bottom: 30px;
+    }
+
+    hr{
+    border:1px solid lightgray;
+    width:800px;
+    margin-bottom:30px;
+    }
 table {
-             border-top: 1px solid #444444;
+             border-top: 1px solid white;
             border-collapse: collapse;
+            width:900px;
+            margin: auto;
             text-align: center;
         }
          th, td {
-            border-bottom: 1px solid #444444;
+            border-bottom: 1px solid white;
             padding: 10px;
+            font-size:25px;
         }
+    td>a{
+        text-decoration: none;
+        color:black;
+    }
         tbody tr:nth-child(2n) {
             background-color: ;
         }
@@ -30,14 +53,15 @@ table {
             background-color: beige;
         }
         #headtr {
-            background-color: skyblue;
+            background-color: rgb(3,73,120);
+            color:white;
         }
 
 </style>
 </head>
 <body>
 <jsp:include page="/UI/headerUI.jsp"/>
-<h1>QnA</h1>
+<h1>상담센터</h1><hr>
 				<% String root= request.getContextPath(); %>
 	<form action="">
 	<table> 
@@ -76,6 +100,7 @@ table {
 			</tbody>
 		</table>
 	</form>
+	<hr>
 <jsp:include page="/UI/footerUI.jsp"/>
 </body>
 </html>

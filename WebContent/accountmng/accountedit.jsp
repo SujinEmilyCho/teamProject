@@ -10,7 +10,10 @@
 <link rel="stylesheet" type="text/css" href="../css/frame.css"/>
 <style type="text/css">
 	table{
+        width:800px;
+        margin:0px auto;
 		border-collapse: collapse;
+        margin-bottom: 30px;
 	}
 	table>thead>tr>th{
 		border:1px solid;
@@ -24,7 +27,37 @@
     tbody tr:nth-child(2n+1) {
             background-color: beige;
         }
-	
+    #see{
+        width:90px;
+        height:30px;
+        background-color:rgb(3,73,120);
+        border:1px solid white;
+        color:white;
+        font-size:20px;
+        font-weight: bold;
+    }
+    #save{
+        width:90px;
+        height:30px;
+        background-color:rgb(3,73,120);
+        border:1px solid white;
+        color:white;
+        font-size:20px;
+        font-weight: bold;
+        text-align: blue;
+    }
+    #select{
+        width:200px;
+        height:30px;
+        text-align: center;
+        font-size:20px;
+       
+    }
+    #search{
+        width:500px;
+        height:100px;
+         margin: 0px auto;
+    }
 </style>
 <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
 	<%
@@ -232,16 +265,16 @@ $(document).ready(function() {
 		
 		%>
 		<!-- <a href="account.bit">[저 장]</a> -->
-		
-			<select name="showhowmany">
+	<div id="search">
+			<select name="showhowmany" id="select">
 				<option value="10">10개씩 보기</option>
 				<option value="25">25개씩 보기</option>
 				<option value="50">50개씩 보기</option>
 			</select>
-			<input type="submit" value="보기">
+			<input type="submit" value="보기"  id="see">
+			 
 			
-			
-			<button type="button" onclick="chg()">저 장</button> 
+			<button id="save" type="button" onclick="chg()">저 장</button> 
 		</form> <!-- 저장 액션 폼 -->
 		
 			<script>	//update 
@@ -271,7 +304,7 @@ $(document).ready(function() {
 				//	location.replace("account.bit");
 				//}
 			</script>
-			
+			</div>
 <jsp:include page="/UI/footerUI.jsp"/>			
 </body>
 </html>
