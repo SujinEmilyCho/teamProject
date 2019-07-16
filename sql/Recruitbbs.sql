@@ -15,4 +15,4 @@ create sequence Recruitbbs_seq;
 
 --dummy
 insert into Recruitbbs values (Recruitbbs_seq.nextval,1,'choijieun','18/7/5-18/10/31','Hello Recruit','Happy Friday','JAVA',sysdate);
-commit;
+commit

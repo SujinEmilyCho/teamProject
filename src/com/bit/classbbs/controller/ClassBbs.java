@@ -34,7 +34,7 @@ public class ClassBbs extends HttpServlet {
 			resp.sendRedirect(req.getContextPath()+"/error/loginRequired.jsp"); // 에러페이지 컨트롤러 만들기
 			return;
 		//계정이 있지만 accountType이 없는 경우
-		}else if(session.getAttribute("accountType")==null) {
+		}else if(session.getAttribute("accountType")==null || (Integer)session.getAttribute("accountType")==0) {
 			resp.sendRedirect(req.getContextPath()+"/error/notAuthorized.jsp"); // 에러페이지 컨트롤러 만들기
 			return;
 		}

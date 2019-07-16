@@ -151,20 +151,20 @@
                 <div id="logo"><a href="<%=request.getContextPath()%>"><img src="<%=request.getContextPath()%>/UI/imgs/logo.jpg" /></a></div>
                 <div id="menubar">
                     <ul id="menu">
-                        <li><a href="">학원소개</a>
+                        <li><a href="<%=request.getContextPath()%>/hello">학원소개</a>
                             <ul class="A">
-                                <li><a href="">인삿말</a></li>
-                                <li><a href="">센터시설</a></li>
-                                <li><a href="">강사진소개</a></li>
-                                <li><a href="">오시는길</a></li>
+                                <li><a href="<%=request.getContextPath()%>/hello">인삿말</a></li>
+                                <li><a href="<%=request.getContextPath()%>/intro">센터시설</a></li>
+                                <li><a href="<%=request.getContextPath()%>/teacher">강사진소개</a></li>
+                                <li><a href="<%=request.getContextPath()%>/come">오시는길</a></li>
                             </ul>
                         </li>
                         <li><a href="<%=request.getContextPath()%>/recruit">교육과정</a>
                             <ul class="B">
                            		<li><a href="<%=request.getContextPath()%>/recruit">모집과정</a>
-                                <li><a href="">JAVA과정</a></li>
-                                <li><a href="">DB과정</a></li>
-                                <li><a href="">WEB과정</a></li>
+                                <li><a href="<%=request.getContextPath()%>/java">JAVA과정</a></li>
+                                <li><a href="<%=request.getContextPath()%>/db">DB과정</a></li>
+                                <li><a href="<%=request.getContextPath()%>/web">WEB과정</a></li>
                             </ul>
                         </li>
                         <li><a href="<%=request.getContextPath()%>/score">학습관리</a>

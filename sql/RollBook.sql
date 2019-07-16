@@ -12,13 +12,13 @@ create table RollBook(
 create sequence Roll_seq;
 
 --dummy
-insert into RollBook values (Roll_seq.nextval, 4, '1906JAVA', '19-07-07','조퇴');
-insert into RollBook values (Roll_seq.nextval, 4, '1906JAVA', '19-07-08','결석');
-insert into RollBook values (Roll_seq.nextval, 4, '1906JAVA', '19-07-09', '출석');
-insert into RollBook values (Roll_seq.nextval, 4, '1906JAVA', '19-07-10', '결석');
-insert into RollBook values (Roll_seq.nextval, 5, '1905WEB', '19-07-07','지각');
-insert into RollBook values (Roll_seq.nextval, 5, '1905WEB', '19-07-08','출석');
-insert into RollBook values (Roll_seq.nextval, 5, '1905WEB', '19-07-09', '결석');
+insert into RollBook values (Roll_seq.nextval, 4, '1906JAVA', '19-07-16','조퇴');
+insert into RollBook values (Roll_seq.nextval, 4, '1906JAVA', '19-07-16','결석');
+insert into RollBook values (Roll_seq.nextval, 4, '1906JAVA', '19-07-16', '출석');
+insert into RollBook values (Roll_seq.nextval, 4, '1906JAVA', '19-07-16', '결석');
+insert into RollBook values (Roll_seq.nextval, 5, '1905WEB', '19-07-16','지각');
+insert into RollBook values (Roll_seq.nextval, 5, '1905WEB', '19-07-16','출석');
+insert into RollBook values (Roll_seq.nextval, 5, '1905WEB', '19-07-16', '결석');
 
 commit;
 
