@@ -16,11 +16,12 @@ public class PostComment extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("utf-8");
 		HttpSession session=req.getSession();
+		
 		int accountNum = (Integer)session.getAttribute("accountNum");
 		int classBbsNum = Integer.parseInt(req.getParameter("classBbsNum"));
 		String content = req.getParameter("content");
+		System.out.println(content);
 		
 		PostComment_Dao postCommentDao = new PostComment_Dao();
 		int result = postCommentDao.addComment(classBbsNum, accountNum, content);

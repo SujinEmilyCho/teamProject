@@ -93,7 +93,7 @@
 						$.ajax({
 							url: "<%=context%>/classbbs/comment",
 							method:"get",
-							data:{classBbsNum: "<%=bean.getNum()%>", content: value},
+							data:{classBbsNum: "<%=bean.getNum()%>", content:  value},
 							success: function(){
 								//$('#comment').val(null);
 								location.reload();
